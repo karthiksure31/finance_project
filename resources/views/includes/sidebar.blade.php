@@ -52,6 +52,32 @@
                with font-awesome or any other icon font library -->
                @if(Auth::user()->role_id == '1')
                 <li class="nav-item">
+                    <a href="{{ route('super_admin.dashboard')}}" class="nav-link {{ (request()->is('super_admin/dashboard*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('super_admin.profile')}}" class="nav-link {{ (request()->is('super_admin/profile*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('super_admin.settings')}}" class="nav-link {{ (request()->is('super_admin/settings*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Settings
+                        </p>
+                    </a>
+                </li>
+                @endif
+                @if(Auth::user()->role_id == '2')
+                <li class="nav-item">
                     <a href="{{ route('admin.dashboard')}}" class="nav-link {{ (request()->is('admin/dashboard*')) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
@@ -76,7 +102,7 @@
                     </a>
                 </li>
                 @endif
-                @if(Auth::user()->role_id == '2')
+                @if(Auth::user()->role_id == '3')
                 <li class="nav-item">
                     <a href="{{ route('user.dashboard')}}" class="nav-link {{ (request()->is('user/dashboard*')) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -95,6 +121,32 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('user.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Settings
+                        </p>
+                    </a>
+                </li>
+                @endif
+                @if(Auth::user()->role_id == '4')
+                <li class="nav-item">
+                    <a href="{{ route('sales.dashboard')}}" class="nav-link {{ (request()->is('sales/dashboard*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('sales.profile')}}" class="nav-link {{ (request()->is('sales/profile*')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('sales.settings')}}" class="nav-link {{ (request()->is('sales/settings*')) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Settings
